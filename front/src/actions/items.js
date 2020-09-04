@@ -23,7 +23,7 @@ export function itemsFetchDataSuccess(items) {
 export function itemsFetchData(url) {
     return (dispatch) => {
         dispatch(itemsIsLoading(true));
-
+        console.log('here');
         fetch(url)
             .then((response) => {
                 if (!response.ok) {

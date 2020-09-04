@@ -8,8 +8,8 @@ import { itemsFetchData } from '../actions/items';
 
 export const mainListItems = (
   <ListItem>
-      <Button variant="contained" color="primary" onClick={itemsFetchData('http://599167402df2f40011e4929a.mockapi.io/items')}>
-          Построить г рафик
+      <Button variant="contained" color="primary" onClick={()=>console.log(0)}>
+          Построить график
       </Button>
   </ListItem>
 );

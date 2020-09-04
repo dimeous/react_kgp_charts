@@ -6,9 +6,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 
-import { connect } from 'react-redux';
-import { itemsFetchData } from '../actions/items';
-
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
