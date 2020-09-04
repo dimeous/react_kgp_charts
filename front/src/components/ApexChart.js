@@ -58,14 +58,6 @@ class KHPChart extends Component {
     }
 }
 
-
-KHPChart.propTypes = {
-    fetchData: PropTypes.func.isRequired,
-    items: PropTypes.array.isRequired,
-    hasErrored: PropTypes.bool.isRequired,
-    isLoading: PropTypes.bool.isRequired
-};
-
 const mapStateToProps = (state) => {
     return {
         items: state.items,
@@ -74,9 +66,5 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: (url) => dispatch(itemsFetchData(url))
-    };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(KHPChart);
+export default connect(mapStateToProps, null)(KHPChart);
+

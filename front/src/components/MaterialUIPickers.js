@@ -23,11 +23,10 @@ export default function MaterialUIPickers() {
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Grid container justify="space-around">
-                <Box color="white" >
+                <Box>
                    C:
                 </Box>
                 <KeyboardDatePicker
-                    color="white"
                     disableToolbar
                     format="dd/MM/yyyy"
                     id="date-picker-inline"
@@ -68,7 +67,6 @@ export default function MaterialUIPickers() {
                         'aria-label': 'change date',
                     }}
                 />
-
                     <KeyboardTimePicker
                         id="time-picker"
                         label="Время"
