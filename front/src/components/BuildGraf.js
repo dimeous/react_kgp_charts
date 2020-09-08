@@ -8,12 +8,19 @@ class  BuildGraf extends Component{
     getGrafData(){
             this.props.fetchData();
     }
-
+    getNewState(){
+        console.log(this.props.items);
+    }
     render(){
         return (
+            <div>
                 <Button variant="contained" color="primary" onClick={()=>this.getGrafData()}>
                     Построить график
                 </Button>
+                <Button variant="contained" color="primary" onClick={()=>this.getNewState()}>
+                      Построить график2
+                </Button>
+            </div>
         );
     }
 }

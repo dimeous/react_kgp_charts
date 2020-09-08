@@ -15,6 +15,7 @@ try {
         $data[1][$i]['v']=sin($i)*100/rand(1,20);
         $data[1][$i]['t']=time()+60*$i;
     }
+    $return['status']=1;
 } catch (Exception $e) {
     $message = $e;
 }

@@ -14,12 +14,10 @@ export const addTodo = () => {
         const userId='';
         dispatch(addTodoStarted());
         axios
-            .post(`https://jsonplaceholder.typicode.com/todos`, {
-
+            .post(`http://127.0.0.1:8000/`, {
                 completed: false
             })
             .then(res => {
-                console.log(res);
                 dispatch(addTodoSuccess(res.data));
             })
             .catch(err => {
