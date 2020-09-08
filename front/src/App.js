@@ -1,25 +1,38 @@
-import React from 'react';
 import Dashboard from "./components/Dashboard";
+import React, { Component } from 'react';
+import axios from 'axios';
 
 
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-export default function App() {
-  return (
-      <Dashboard/>
-  );
+    this.state = {
+      hits: [],
+      isLoading: false,
+      error: null,
+    };
+  }
+
+    getApiData() {
+    this.setState({ isLoading: true });
+
+    axios.get("query")
+        .then(result => this.setState({
+          hits: result.data.hits,
+          isLoading: false
+        }))
+        .catch(error => this.setState({
+          error,
+          isLoading: false
+        }));
+  }
+  render(){
+      return(
+          <Dashboard/>
+      )
+  }
+
 }
-/*
-<Container maxWidth="sm">
-<Box my={4}>
-<SimpleBottomNavigation></SimpleBottomNavigation>
-<Typography variant="h4" component="h1" gutterBottom>
 
-</Typography>
-<ProTip />
-<MaterialUIPickers/>
-<KHPChart></KHPChart>
-<Copyright />
-</Box>
-</Container>
-*/
-
+export default App;

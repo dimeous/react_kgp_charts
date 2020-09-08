@@ -9,6 +9,12 @@ $return = [];
 $data=[];
 try {
     $json = json_decode($_POST);
+    for ($i=0; $i<360;$i++){
+        $data[0][$i]['v']=sin($i)*100;
+        $data[0][$i]['t']=time()+60*$i;
+        $data[1][$i]['v']=sin($i)*100/rand(1,20);
+        $data[1][$i]['t']=time()+60*$i;
+    }
 } catch (Exception $e) {
     $message = $e;
 }

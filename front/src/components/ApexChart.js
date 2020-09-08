@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import React, { Component, PropTypes } from 'react';
 import Chart from 'react-apexcharts'
 import Paper from "@material-ui/core/Paper";
-import { itemsFetchData } from '../actions/items';
 const data = [
     [1327359600000, 30.95],
     [1327446000000, 31.34],
@@ -38,6 +37,7 @@ class KHPChart extends Component {
 
 
     render() {
+        console.log(this.props);
         if (this.props.hasErrored) {
             return <p>Sorry! There was an error loading the items</p>;
         }

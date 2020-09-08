@@ -4,11 +4,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import App from './App';
 import theme from './theme';
-
+import {applyMiddleware, createStore} from "redux";
 import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
 
-const store = configureStore();
+import rootReducer from './reduscers/reducers_axios';
+import thunk from "redux-thunk";
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
